@@ -19,7 +19,7 @@
 -   Run hbnb(non-interactively): echo ""|./console
 
 ## Environment
-   This project is Interpreted on Ubuntu 14.04 LTS usiong Python3 (version 3.4.3)
+    This project is Interpreted on Ubuntu 14.04 LTS usiong Python3 (version 3.4.3)
    
 ## Test
     All the is tested with the unittest module. The test for the classes are in the test_mode directory.
