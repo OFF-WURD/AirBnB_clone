@@ -25,5 +25,5 @@
     All the is tested with the unittest module. The test for the classes are in the test_mode directory.
     
 ## Author
-    Joseph David  Funsho -
+    Joseph David  Funsho - <dfunsho72@gmail.com>
     Paul onyejela
