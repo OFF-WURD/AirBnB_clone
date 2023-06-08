@@ -48,3 +48,6 @@ class TestBaseModel(unittest.TestCase):
         
 if __name__ == '__main__':
     unittest.main()
+#!/usr/bin/python3
+"""Test for required behaviour and documentation"""
+import unittest
