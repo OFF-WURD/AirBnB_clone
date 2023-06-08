@@ -6,8 +6,6 @@ import models
 import pep8 as pycodestyle
 import time
 import unittest
-from unittest import mock
-BaseModel = models.base_model.BaseModel
 
 if __name__ == '__main__':
     unittest.main()
