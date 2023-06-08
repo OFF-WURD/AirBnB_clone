@@ -1,3 +1,8 @@
 #!/usr/bin/python3
-"""Test for required behaviour and documentation"""
+"""Test documentation for place"""
+
 import unittest
+import inspect
+from models import place
+import pep8
+from datetime import datetime
