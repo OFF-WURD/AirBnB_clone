@@ -1,3 +1,6 @@
 #!/usr/bin/python3
-"""Test for required behaviour and documentation"""
+"""Test for city documentation classes"""
 import unittest
+import pep8
+from datetime import datetime
+from models import city
