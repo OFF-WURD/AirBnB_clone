@@ -8,7 +8,6 @@ import time
 import unittest
 from unittest import mock
 BaseModel = models.base_model.BaseModel
-module_doc = models.base_model.__doc__
 
 if __name__ == '__main__':
     unittest.main()
