@@ -5,5 +5,4 @@ import unittest
 import json
 import pep8
 from io import StringIO
-from models.engine.file_storage import FileStorage
 import os
