@@ -1,7 +1,7 @@
 #!/bin/bash/python3
 import json
 import os
-
+from models.base_model import BaseModel
 class FileStorage():
     '''serializes instances to a JSON file and
       deserializes JSON file to instances'''
@@ -33,13 +33,12 @@ class FileStorage():
     def reload(self):
         '''deserializes the JSON file to __objects
           (only if the JSON file (__file_path) exists'''
-        import models
         try:
             with open(self.__file_path, "r") as file:
                 serialized_objects = json.load(file)
                 for key, obj_dict in serialized_objects.items():
                     class_name, obj_id = key.split(".")
-                    class_ = getattr(models, class_name)
+                    class_ = BaseModel if class_name == "BaseModel" else getattr(models, class_name)
                     obj = class_(**obj_dict)
                     self.__objects[key] = obj
         except FileNotFoundError:
