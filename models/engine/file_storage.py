@@ -1,7 +1,6 @@
 #!/bin/bash/python3
 import json
 import os
-import models
 
 class FileStorage():
     '''serializes instances to a JSON file and
@@ -34,6 +33,7 @@ class FileStorage():
     def reload(self):
         '''deserializes the JSON file to __objects
           (only if the JSON file (__file_path) exists'''
+        import models
         try:
             with open(self.__file_path, "r") as file:
                 serialized_objects = json.load(file)
