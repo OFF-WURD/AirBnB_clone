@@ -34,9 +34,3 @@ class BaseModel:
         obj_dict['created_at'] = self.created_at.isoformat()
         obj_dict['updated_at'] = self.updated_at.isoformat()
         return obj_dict
-        
-        #adding class name to the dictionary
-        obj[__class__] = type(self).__name__
-        obj[self.created_at] = datetime.now().isoformat()
-        obj[self.updated_at] = datetime.now().isoformat()
-        return obj
