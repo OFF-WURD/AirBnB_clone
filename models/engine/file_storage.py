@@ -33,15 +33,13 @@ class FileStorage():
     def reload(self):
         '''deserializes the JSON file to __objects
           (only if the JSON file (__file_path) exists'''
-        try:
-            with open(self.__file_path, 'r') as file:
-                data = json.load(file)
-                for key, obj_dict in data.items():
-                    class_name, obj_id = key.split('.')
-                    # Dynamically create an instance of the class using eval
-                    cls = eval(class_name)
-                    # Create an instance from the dictionary representation
-                    obj = cls(**obj_dict)
+       try:
+           with open(self.__file_path, "r") as file:
+                serialized_objects = json.load(file)
+                for key, obj_dict in serialized_objects.items():
+                    class_name, obj_id = key.split(".")
+                    class_ = getattr(models, class_name)
+                    obj = class_(**obj_dict)
                     self.__objects[key] = obj
-        except:
-            pass
+    except FileNotFoundError:
+        pass
