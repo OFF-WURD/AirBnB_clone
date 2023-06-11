@@ -1,6 +1,7 @@
 #!/bin/bash/python3
 import json
 import os
+import models
 
 class FileStorage():
     '''serializes instances to a JSON file and
