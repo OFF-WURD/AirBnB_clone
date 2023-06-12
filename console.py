@@ -30,7 +30,7 @@ class HBNBCommand(cmd.Cmd):
         elif arg not in self.__class__.__name__:
             print("** class doesn't exist **")
         else:
-            new_instance = eaval(arg)()
+            new_instance = HBNBCommand.eval(arg)()
             new_instance.save()
             print(new_instance.id)
 
