@@ -6,7 +6,7 @@ class FileStorage():
     '''serializes instances to a JSON file and
       deserializes JSON file to instances'''
     #class private Attribute
-    __file_path ="files.json"
+    __file_path =""
     __objects = {}
     
     def __init__(self,):
