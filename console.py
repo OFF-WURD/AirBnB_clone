@@ -31,7 +31,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
         else:
             new_instance = eval(arg)()
-            models.storage.new_instance.save()
+            new_instance.save()
             print(new_instance.id)
 
 if __name__ == '__main__':
