@@ -1,11 +1,10 @@
-#!/usr/bin/python3
 """
 This is the console base for the unit
 """
 import cmd
 
 class HBNBCommand(cmd.Cmd):
-    prompt = '(hbnb) '
+    prompt = '(hbnb)'
 
     def do_quit(self, arg):
         """Exit the program"""
