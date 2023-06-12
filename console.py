@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+This is the console base for the unit
+"""
 import cmd
 from cmd import Cmd
 
