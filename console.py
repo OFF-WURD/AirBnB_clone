@@ -28,7 +28,7 @@ class HBNBCommand(cmd.Cmd):
         if not arg:
             print("** class name missing **")
         elif arg not in self.__class__.__name__:
-            print("** class doesn't exist)
+            print("** class doesn't exist **")
         else:
             new_instance = eaval(arg)()
             new_instance.save()
