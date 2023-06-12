@@ -4,7 +4,7 @@ This is the console base for the unit
 """
 import cmd
 from models.base_model import BaseModel
-
+import models
 class HBNBCommand(cmd.Cmd):
     prompt = '(hbnb)'
 
@@ -30,8 +30,8 @@ class HBNBCommand(cmd.Cmd):
         elif arg not in self.__class__.__name__:
             print("** class doesn't exist **")
         else:
-            new_instance = HBNBCommand.eval(arg)()
-            new_instance.save()
+            new_instance = eval(arg)()
+            models.storage.new_instance.save()
             print(new_instance.id)
 
 if __name__ == '__main__':
