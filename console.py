@@ -3,6 +3,7 @@
 This is the console base for the unit
 """
 import cmd
+from models.base_model import Basemodel
 
 class HBNBCommand(cmd.Cmd):
     prompt = '(hbnb)'
