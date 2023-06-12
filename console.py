@@ -3,7 +3,6 @@
 This is the console base for the unit
 """
 import cmd
-from cmd import Cmd
 
 class HBNBCommand(cmd.Cmd):
     prompt = '(hbnb) '
