@@ -13,13 +13,10 @@ class HBNBCommand(cmd.Cmd):
         print() #print a newline before exiting
         return True
     
-    def help_quit(self):
-        '''Display help for the 'quit' command'''
-        print('This command exit the programm')
-    
-    def help_EOF(self):
-        '''Display help for the 'EOF' command'''
-        print("This command means end-of-file and it exit the program")
+    def do_help(self, arg):
+        """List available commands with 'help' or detailed help with 'help cmd'."""
+        super().do_help(arg)
+        
     def emptyline(self):
         '''override emptyline not to do anything'''
         pass
