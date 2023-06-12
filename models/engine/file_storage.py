@@ -6,40 +6,38 @@ class FileStorage():
     '''serializes instances to a JSON file and
       deserializes JSON file to instances'''
     #class private Attribute
-    __file_path =""
-    __objects = {}
-    
-    def __init__(self,):
-        "Constructor"
-        pass
+class FileStorage:
+    """serializes instances to a JSON file & deserializes back to instances"""
 
-    def  all(self):
-        """Return Dictionary __object"""
+    # string - path to the JSON file
+    __file_path = "file.json"
+    # dictionary - empty but will store all objects by <class name>.id
+    __objects = {}
+
+    def all(self):
+        """returns the dictionary __objects"""
         return self.__objects
-    
+
     def new(self, obj):
-        key = "{}.{}".format(obj.__class__.__name__, obj.id)
-        self.__objects[key] = obj
+        """sets in __objects the obj with key <obj class name>.id"""
+        if obj is not None:
+            key = obj.__class__.__name__ + "." + obj.id
+            self.__objects[key] = obj
 
     def save(self):
-        '''serializes __objects to the JSON file (path: __file_path)'''
-        data = {}
-        for key, obj in self.__objects.items():
-            data[key] = obj.to_dict()
-        
-        with open(self.__file_path, 'w') as file:
-            json.dump(data, file)
+        """serializes __objects to the JSON file (path: __file_path)"""
+        json_objects = {}
+        for key in self.__objects:
+            json_objects[key] = self.__objects[key].to_dict()
+        with open(self.__file_path, 'w') as f:
+            json.dump(json_objects, f)
 
     def reload(self):
-        '''deserializes the JSON file to __objects
-          (only if the JSON file (__file_path) exists'''
+        """deserializes the JSON file to __objects"""
         try:
-            with open(self.__file_path, "r") as file:
-                serialized_objects = json.load(file)
-                for key, obj_dict in serialized_objects.items():
-                    class_name, obj_id = key.split(".")
-                    class_ = BaseModel if class_name == "BaseModel" else getattr(models, class_name)
-                    obj = class_(**obj_dict)
-                    self.__objects[key] = obj
-        except FileNotFoundError:
+            with open(self.__file_path, 'r') as f:
+                jo = json.load(f)
+            for key in jo:
+                self.__objects[key] = classes[jo[key]["__class__"]](**jo[key])
+        except:
             pass
