@@ -1,4 +1,6 @@
+#!/usr/bin/python3
 import cmd
+from cmd import Cmd
 
 class HBNBCommand(cmd.Cmd):
     prompt = '(hbnb) '
