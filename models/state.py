@@ -5,5 +5,5 @@ class State(BaseModel):
     '''State public class attribute'''
     name =""
     def __init__(self, *args, **kwargs):
-        "initializing State class'''
+        '''initialization'''
         super().__init__(*args, **kwargs)
