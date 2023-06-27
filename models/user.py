@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 from models.base_model import BaseModel
 ''' user class that inherit from BaseModel'''
-class user(BaseModel):
+class User(BaseModel):
     '''user public attribute'''
     email =""
     password =""
