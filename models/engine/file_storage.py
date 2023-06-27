@@ -3,7 +3,13 @@ import json
 import os
 from models.base_model import BaseModel
 from models.user import User
-classes = {"BaseModel":BaseModel, "User":User}
+from models.state import State
+from models.place import Place
+from models.review import Review
+from models.amenity import Amenity
+from models.city import City
+classes = {"BaseModel":BaseModel, "User":User, "State":State, 
+           "Place":Place, "Review":Review, "Amenity":Amenity, "City":City}
 class FileStorage:
     '''serializes instances to a JSON file and
       deserializes JSON file to instances'''
