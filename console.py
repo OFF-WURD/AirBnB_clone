@@ -126,5 +126,8 @@ class HBNBCommand(cmd.Cmd):
             return
 
         attribute_value = args[3].strip('"')
+        instance = instances[key]
+        setattr(instance, attribute_name, attribute_value)
+        instance.save()
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
