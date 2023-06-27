@@ -37,10 +37,10 @@ class HBNBCommand(cmd.Cmd):
         if len(nominal) == 0:
             print("** class name missing")
             return
-        if nominal[0] not in HBNBCommand.my_dict.keys():
+        if nominal[0] not in HBNBCommand:
             print("** class doesn't exist **")
             return
-        new_instance = HBNBCommand.my_dict[my_data[0]]()
+        new_instance = HBNBCommand
         new_instance.save()
         print(new_instance.id)
 
@@ -53,7 +53,7 @@ class HBNBCommand(cmd.Cmd):
         if len(nominal) == 0:
             print("** class name missing **")
             return
-        if nominal[0] not in HBNBCommand.my_dict.keys():
+        if nominal[0] not in HBNBCommand:
             print("** class doesn't exist **")
             return
         if len(nominal) <= 1:
@@ -77,7 +77,7 @@ class HBNBCommand(cmd.Cmd):
         if len(nominal) == 0:
             print("** class name missing")
             return
-        if nominal[0] not in HBNBCommand.my_dict.keys():
+        if nominal[0] not in HBNBCommand:
             print("** class doesn't exist **")
             return
         if len(nominal) <= 1:
@@ -106,7 +106,7 @@ class HBNBCommand(cmd.Cmd):
             print(json.dumps(my_json))
             return
         nominal = shlex.split(arg)
-        if nominal[0] in HBNBCommand.my_dict.keys():
+        if nominal[0] in HBNBCommand:
             for key in objects_dict:
                 if token[0] in key:
                     my_json.append(str(objects_dict[key]))
@@ -127,7 +127,7 @@ class HBNBCommand(cmd.Cmd):
         my_data = shlex.split(arg)
         storage.reload()
         objs_dict = storage.all()
-        if my_data[0] not in HBNBCommand.my_dict.keys():
+        if my_data[0] not in HBNBCommand:
             print("** class doesn't exist **")
             return
         if (len(my_data) == 1):
