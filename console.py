@@ -3,6 +3,11 @@
 from models.base_model import BaseModel
 from models.user import User
 from models import storage
+from models.state import State
+from models.place import Place
+from models.review import Review
+from models.amenity import Amenity
+from models.city import City
 import cmd
 import json
 class HBNBCommand(cmd.Cmd):
@@ -12,8 +17,13 @@ class HBNBCommand(cmd.Cmd):
 
     valid_classes = {
         'BaseModel',
-        'User'
-    }
+        'User',
+        'Amenity',
+        'State',
+        'Place',
+        'Review',
+        'City'
+        }
 
     def emptyline(self):
         """Do nothing on empty line"""
