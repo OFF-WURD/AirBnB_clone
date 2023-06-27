@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 ''' console base for command'''
 from models.base_model import BaseModel
+from models.user import User
 from models import storage
 import cmd
 import json
@@ -10,7 +11,8 @@ class HBNBCommand(cmd.Cmd):
     prompt = '(hbnb) '
 
     valid_classes = {
-        'BaseModel'
+        'BaseModel',
+        'User'
     }
 
     def emptyline(self):
