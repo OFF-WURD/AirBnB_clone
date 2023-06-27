@@ -52,13 +52,3 @@ class FileStorage:
                 self.__objects[key] = classes[jo[key]["__class__"]](**jo[key])
         except:
             pass
-                   
-    def destroy(self, class_name, instance_id):
-        """Deletes an instance based 
-        on the class name and id"""
-        key = class_name + '.' + instance_id
-        if key in self.__objects:
-            del self.__objects[key]
-            self.save()
-        else:
-            print("** no instance found **")               
