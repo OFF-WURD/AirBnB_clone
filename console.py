@@ -80,11 +80,17 @@ class HBNBCommand(cmd.Cmd):
             return
 
         if len(args) < 2:
-           print("** instance id missing **")
+            print("** instance id missing **")
             return
 
+        instances = storage.all()
         instance_id = args[1]
-        storage.destroy(class_name, instance_id)
+        key = "{}.{}".format(class_name, instance_id)
+        if key in instances:
+            del instances[key]
+            storage.save()
+        else:
+            print("** no instance found **")
 
 
     def do_all(self, arg):
