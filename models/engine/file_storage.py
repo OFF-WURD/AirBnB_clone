@@ -22,9 +22,15 @@ class FileStorage:
     # dictionary - empty but will store all objects by <class name>.id
     __objects = {}
 
-    def all(self):
-        """returns the dictionary __objects"""
-        return self.__objects
+def all(self, class_name=None):
+    """Returns a dictionary of all objects or objects of a specific class"""
+    if class_name:
+        objects = {key: obj for key, obj in self.__objects.items()
+                   if obj.__class__.__name__ == class_name}
+    else:
+        objects = self.__objects.copy()
+    return objects
+
 
     def new(self, obj):
         """sets in __objects the obj with key <obj class name>.id"""
