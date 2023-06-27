@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 from models.base_model import BaseModel
 '''place classes that inherit from BaseModel'''
-class Place(BaseModel)
+class Place(BaseModel):
     city_id=""
     user_id=""
     name=""
