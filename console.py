@@ -47,7 +47,7 @@ class HBNBCommand(cmd.Cmd):
             print("** instance id missing **")
             return
 
-        instances = models.storage.all()
+        instances = storage.all()
         instance_id = args[1]
         key = "{}.{}".format(class_name, instance_id)
         if key in instances:
@@ -109,7 +109,7 @@ class HBNBCommand(cmd.Cmd):
             print("** instance id missing **")
             return
 
-        instances = models.storage.all()
+        instances = storage.all()
         instance_id = args[1]
         key = "{}.{}".format(class_name, instance_id)
         if key not in instances:
