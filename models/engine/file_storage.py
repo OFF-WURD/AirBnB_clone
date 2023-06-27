@@ -2,7 +2,9 @@
 import json
 import os
 from models.base_model import BaseModel
-class FileStorage():
+from models.user import User
+classes = {"BaseModel":BaseModel, "User":User}
+class FileStorage:
     '''serializes instances to a JSON file and
       deserializes JSON file to instances'''
     #class private Attribute
