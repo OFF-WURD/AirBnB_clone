@@ -88,7 +88,6 @@ class HBNBCommand(cmd.Cmd):
         key = "{}.{}".format(class_name, instance_id)
         if key in instances:
             del instances[key]
-            instances.save()
         else:
             print("** no instance found **")
 
