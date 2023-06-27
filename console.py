@@ -37,7 +37,7 @@ class HBNBCommand(cmd.Cmd):
         if len(nominal) == 0:
             print("** class name missing")
             return
-        if nominal[0] not in HBNBCommand:
+        if nominal[0] not in HBNBCommand.__dict__.keys():
             print("** class doesn't exist **")
             return
         new_instance = HBNBCommand
@@ -53,7 +53,7 @@ class HBNBCommand(cmd.Cmd):
         if len(nominal) == 0:
             print("** class name missing **")
             return
-        if nominal[0] not in HBNBCommand:
+        if nominal[0] not in HBNBCommand.__dict__.keys():
             print("** class doesn't exist **")
             return
         if len(nominal) <= 1:
