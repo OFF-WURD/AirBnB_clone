@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-from models.base import BaseModel
+from models.base_model import BaseModel
 '''State classes'''
 class State(BaseModel):
     '''State public class attribute'''
