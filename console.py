@@ -94,22 +94,22 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, arg):
         """Prints all string representation of all instances."""
-        storage.reload()
-        my_json=[]
-        args = arg.split()
-        instances = storage.all()
-        if not args:
-            for key in instances:
-                my_json.append(str(instances[key]))
-            print(json.dumps(my_json))
+        args = arg.split('.')
+        if len(args) != 2:
+            print("** invalid syntax **")
             return
-        if args[0] not in self.valid_class:
-            for key in instances:
-                if args[0] in key:
-                    my_json.append(str(instances[key]))
-            print(json.dumps(my_json))
-        else:
+
+        class_name, method = args
+        if class_name not in self.valid_classes:
             print("** class doesn't exist **")
+            return
+
+        if method != 'all()':
+            print("** invalid syntax **")
+            return
+
+        instances = storage.all(class_name)
+        print([str(instance) for instance in instances.values()])
 
     def do_update(self, arg):
         """Updates an instance based on the class name and id"""
