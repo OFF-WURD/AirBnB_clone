@@ -150,8 +150,12 @@ class HBNBCommand(cmd.Cmd):
 
     def do_count(self, arg):
         """Counts the number of instances of a class."""
-        class_name = arg.split()[0]
+        args = arg.split('.')
+        if len(args) != 2 or args[1] != 'count()':
+            print("** Unknown syntax: {}.count()".format(args[0]))
+            return
 
+        class_name = args[0]
         if class_name not in self.valid_classes:
             print("** class doesn't exist **")
             return
