@@ -105,11 +105,11 @@ class HBNBCommand(cmd.Cmd):
             return
 
         if method != 'all()':
-            print("** invalid syntax **")
+            print("** instance id missing **")
             return
 
         instances = storage.all(class_name)
-        print([str(instance) for instance in instances.values()])
+        print([str(instance) for instance in instances.values() if class_name in str(instance)])
 
     def do_update(self, arg):
         """Updates an instance based on the class name and id"""
