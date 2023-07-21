@@ -1,6 +1,6 @@
 # 0x01. AirBnB clone - Web static
 ## Learning Objectives
-## What I learn from this project:
+### What I learn from this project:
 - What is HTML
 - How to create an HTML page
 - What is a markup language
@@ -14,8 +14,6 @@
 - What is a selector
 - How to compute CSS Specificity Value
 - What are Box properties in CSS
-- Inline styling
-### Write an HTML page that displays a header and a footer.
-1. Headline 
-## Author
+  
+# Author
    Joseph David - dfunsho72@gmail.com
